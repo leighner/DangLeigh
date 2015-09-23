@@ -1,0 +1,48 @@
+
+
+body {
+    font-family: "Arial Black";
+    position absolute;
+    bottom 0;
+    left 0;
+    padding 50px;
+	margin 0;
+    overflow hidden;
+	font-size: 48px;
+	background-color: #1cc8cc;
+}
+
+canvas{
+border:1px solid #19afb3;
+
+}
+
+h2{
+    font-family: "Arial ";
+    position absolute;
+    bottom 0;
+    left 0;
+    padding 50px;
+	margin 0;
+    overflow hidden;
+	font-size: 48px;
+	background-color: #1cc8cc;
+}
+
+h3{
+    font-family: "Arial ";
+    position absolute;
+    bottom 0;
+    left 0;
+    padding 0px;
+	margin 0;
+    overflow hidden;
+	font-size: 20px;
+	color: #19afb3;
+}
+
+a{
+    color dodgerblue;
+}
+element.style {
+}
