@@ -22,7 +22,7 @@
       };
   })();
 
-  var renderer = PIXI.autoDetectRenderer(window.innerWidth, window.innerHeight);
+  var renderer = PIXI.autoDetectRenderer(window.innerWidth, window.innerHeight*.5);
   var container = new PIXI.Container();
   container.interactive = true
   container.position.x = renderer.width / 2;
@@ -30,7 +30,7 @@
   container.scale.y = -1;
   var SCALE = 100;
 
-  renderer.backgroundColor = 0x1cc8cc;
+  renderer.backgroundColor = 0xdddfd4;
 
 
   document.body.appendChild(renderer.view);
@@ -87,9 +87,9 @@
     s.collisionMask = GROUND|OTHER;
   }
   var world = new p2.World({
-    gravity : [0, -10]
+    gravity : [0, -15]
   });
-
+  world.defaultContactMaterial.friction = 5
   world.solver.iterations = 100;
   world.solver.tolerance = 0.002;
 
@@ -350,8 +350,7 @@
 
 
   
-  world.addBody(createWall([0, -1]));
-
+  world.addBody(createWall([0, -2]));
 
   var headGraphics = new PIXI.Sprite(headTexture);
   headGraphics.anchor.x = 0.5;
