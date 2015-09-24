@@ -199,7 +199,6 @@
   upperBodyGraphics.anchor.y = 0.5;
   container.addChild(upperBodyGraphics);
 
-
   // Head
   var head = new p2.Body({
     mass: 1,
@@ -215,8 +214,8 @@
     position: [-shouldersDistance/2-upperArmLength/2, upperBody.position[1]+upperBodyLength/2],
   });
   var upperRightArm = new p2.Body({
-    mass: 1,
-    position: [shouldersDistance/2+upperArmLength/2, upperBody.position[1]+upperBodyLength/2],
+      mass: 1,
+      position: [shouldersDistance / 2 + upperArmLength / 2, upperBody.position[1] + upperBodyLength / 2],
   });
 
   upperLeftArm.addShape(upperArmShapeLeft);
@@ -351,7 +350,8 @@
 
 
   
-world.addBody(createWall([0,-1]));
+  world.addBody(createWall([0, -1]));
+
 
   var headGraphics = new PIXI.Sprite(headTexture);
   headGraphics.anchor.x = 0.5;
@@ -433,14 +433,14 @@ world.addBody(createWall([0,-1]));
 
   function createWall(PlanePosition)
   {
-      // Create leftwall
-  var planeShape = new p2.Plane();
-  var plane = new p2.Body({
+    // Create leftwall
+    var planeShape = new p2.Plane();
+    var plane = new p2.Body({
     position:PlanePosition
-  });
-  plane.addShape(planeShape);
-  planeShape.collisionGroup = GROUND;
-  planeShape.collisionMask =  BODYPARTS|OTHER;
+    });
+    plane.addShape(planeShape);
+    planeShape.collisionGroup = GROUND;
+    planeShape.collisionMask =  BODYPARTS|OTHER;
 	return plane;
   }
   (function render () {
