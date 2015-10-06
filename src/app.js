@@ -469,10 +469,9 @@
 
   window.addEventListener("resize", function () {
 
-    renderer.resize(window.innerWidth, window.innerHeight);
+    renderer.resize(window.innerWidth, window.innerHeight * .5);
     container.position.x = renderer.width * .5;
     container.position.y = renderer.height * .5;
-
   }, false)
 
 
