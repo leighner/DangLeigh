@@ -21,9 +21,11 @@
         window.setTimeout(callback, 1000 / 60);
       };
   })();
+  var myView = document.getElementById('dangleman');
+  var renderer = PIXI.autoDetectRenderer(window.innerWidth, window.innerHeight * .5, myView);
 
-  var renderer = PIXI.autoDetectRenderer(window.innerWidth, window.innerHeight*.5);
   var container = new PIXI.Container();
+
   container.interactive = true
   container.position.x = renderer.width / 2;
   container.position.y = renderer.height / 2;
@@ -31,9 +33,7 @@
   var SCALE = 100;
 
   renderer.backgroundColor = 0xdddfd4;
-
-
-  document.body.appendChild(renderer.view);
+  $("#dangleman").append(renderer.view);
   var shouldersDistance = 0.5,
     upperArmLength = 0.4,
     lowerArmLength = 0.4,

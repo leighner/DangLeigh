@@ -3,16 +3,43 @@
 <html>
   <head>
     <title>Dang'L'Leigh</title>
+      <script src="src/jquery-2.1.4.min.js"></script>
+      <script src="src/typed.js"></script>
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <h3>Click on the resume or LinkedIn image to get in contact or just toss me around :)</h3>
-	<script src="src/pixi.js"></script>
-    <script src="src/p2.js"></script>
-    <script src="src/app.js"></script>
-    <div class="slide">
-      <h1>Leigh Pascoe</h1>
-      <h2>I Love Code...<span class="blink">|</span></h2>
-    </div>
+      <div id="wrapper">
+          <div id="header"><h3>Click on the resume or LinkedIn image to get in contact or just toss me around :)</h3></div>
+          <div id="dangleman"></div>
+          <div id="content">
+
+              <div class="slide">
+                  <h1 id="greeting"></h1>
+                  <h2 id="aftergreet"></h2>
+              </div>
+
+          </div>
+          <div id="footer"></div>
+      </div>
+      <script>
+                  $(function () {
+                      $("#greeting").delay(1000).typed({
+                          strings: ["Hi.", "My name is <strong>Leigh Pascoe</strong>"],
+                          typeSpeed: 40,
+                          contentType: 'html'
+                      }).delay(1000);
+                      function showAfterFirst() {
+                          $("#aftergreet").typed({
+                              strings: ["and</br> </br>I Love Code"],
+                              typeSpeed: 10,
+                              contentType: 'html'
+                          })
+                      }
+                      setTimeout(showAfterFirst, 3000)
+                  });
+      </script>
+      <script src="src/pixi.js"></script>
+      <script src="src/p2.js"></script>
+      <script src="src/app.js"></script>
   </body>
 </html>
